@@ -3,7 +3,7 @@ import './index.css';
 
 function DevForm({onSubmit}) {
   const [github_username, setGithubUsername] = useState('');
-  const [techs, setTechs] = useState([]);
+  const [techs, setTechs] = useState('');
   const [latitude, setLatitude] = useState('');
   const [longitude, setLongitude] = useState('');
 
@@ -33,7 +33,7 @@ function DevForm({onSubmit}) {
     });
 
     setGithubUsername('');
-    setTechs([]);
+    setTechs('');
   }
 
   return (

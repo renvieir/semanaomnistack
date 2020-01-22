@@ -4,7 +4,16 @@ const socket = socketio('', {
   autoConnect: false,
 });
 
-function connect() {
+function subscribeToNewDevs(subscribeFunction) {
+  socket.on('new-dev', subscribeFunction);
+}
+
+function connect({latitude, longitude, techs}) {
+  socket.io.opts.query = {
+    latitude,
+    longitude,
+    techs,
+  }
   socket.connect();
 }
 
