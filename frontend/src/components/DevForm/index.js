@@ -25,19 +25,19 @@ function DevForm({onSubmit}) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    await onSubmit({
+    const data = {
       github_username,
       techs,
       latitude,
       longitude
-    });
-
+    };
+    await onSubmit(data);
     setGithubUsername('');
     setTechs('');
   }
 
   return (
-    <form onChange={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <div className="input-block">
         <label htmlFor="github_username">Usuário do github</label>
         <input
